@@ -82,7 +82,6 @@
             line-height: 1.5;
         }
 
-        /* Read More Button */
         .read-more-btn {
             background: #00d2ff;
             color: #000;
@@ -94,13 +93,11 @@
             cursor: pointer;
             margin-top: 10px;
             transition: 0.3s;
+            display: block;
         }
 
-        .read-more-btn:hover {
-            background: #fff;
-        }
+        .read-more-btn:hover { background: #fff; }
 
-        /* Overlay Styles */
         .overlay {
             display: none;
             position: fixed;
@@ -155,10 +152,7 @@
             transition: 0.3s;
         }
 
-        .contact-link:hover {
-            background: #00d2ff;
-            color: #000;
-        }
+        .contact-link:hover { background: #00d2ff; color: #000; }
 
         .footer {
             margin-top: 20px;
@@ -211,34 +205,23 @@
             <span class="close-btn" onclick="closeOverlay()">&times;</span>
             <h2 style="color: #00d2ff;">🏏 My Journey with Cricket</h2>
             <p style="color: #ccc; font-size: 14px; line-height: 1.6;">
-                Cricket is one of the most popular sports in the world, and for me, it is my greatest passion. I love the strategic nature of the game, whether it's batting, bowling, or fielding. 
+                Cricket is my greatest passion. I love the strategy and the teamwork involved.
                 <br><br>
-                <b>What I Love About Cricket:</b><br>
-                * <b>Team Spirit:</b> It teaches us how to work together to achieve a common goal.<br>
-                * <b>Focus:</b> Every ball requires 100% concentration, which helps in my ICT studies too.<br>
-                * <b>Discipline:</b> Hard work on the field reflects in my daily life.<br><br>
-                In my free time, I never miss a chance to play a match or watch my favorite players in action. It keeps me energized and motivated!
+                * <b>Team Spirit:</b> Working together for a win.<br>
+                * <b>Focus:</b> Keeping my eye on the goal.<br>
+                * <b>Discipline:</b> Hard work on and off the field.<br><br>
+                Playing cricket keeps me motivated and balanced with my ICT studies.
             </p>
         </div>
     </div>
 
     <script>
-        function openOverlay() {
-            document.getElementById("cricketOverlay").style.display = "flex";
-        }
-
-        function closeOverlay() {
-            document.getElementById("cricketOverlay").style.display = "none";
-        }
-
-        // Close overlay when clicking outside the content
+        function openOverlay() { document.getElementById("cricketOverlay").style.display = "flex"; }
+        function closeOverlay() { document.getElementById("cricketOverlay").style.display = "none"; }
         window.onclick = function(event) {
             var overlay = document.getElementById("cricketOverlay");
-            if (event.target == overlay) {
-                overlay.style.display = "none";
-            }
+            if (event.target == overlay) { overlay.style.display = "none"; }
         }
     </script>
-
 </body>
 </html>
