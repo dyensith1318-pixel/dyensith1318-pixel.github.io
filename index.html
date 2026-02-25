@@ -23,19 +23,22 @@
             overflow-x: hidden;
         }
 
-        /* Banner */
+        /* Banner - Desktop */
         .header-banner {
             width: 100%;
-            height: 250px;
+            height: 380px;
             background-color: #000;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .header-banner img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
+            object-fit: cover; /* කොම්පියුටර් එකට ෆුල් පේන්න */
+            opacity: 0.9;
         }
 
         /* Container */
@@ -43,7 +46,7 @@
             width: 92%;
             max-width: 1100px;
             background: #ffffff;
-            margin: -60px auto 40px auto;
+            margin: -80px auto 40px auto;
             position: relative;
             border-radius: 30px;
             padding: 40px 20px;
@@ -60,19 +63,18 @@
             gap: 20px;
         }
 
-        /* Photo Stack - දකුණට වැඩි ඉඩක් දුන්නා */
+        /* Photo Stack */
         .photo-stack {
             position: relative;
             width: 300px; 
             height: 220px;
-            margin-bottom: 20px;
         }
 
-        /* පිටුපසින් ඇති කොටු ෆොටෝ එක (තවත් දකුණට කළා) */
+        /* පිටුපස ඇති කොටු ෆොටෝ එක */
         .sub-img {
             position: absolute;
             top: 50px; 
-            right: 0; /* දකුණු කෙළවරටම */
+            right: 0; 
             width: 160px;
             height: 160px;
             border-radius: 25px;
@@ -86,7 +88,7 @@
         .main-img {
             position: absolute;
             top: 0;
-            left: 0; /* වම් කෙළවරට */
+            left: 0; 
             width: 170px;
             height: 170px;
             border-radius: 50%;
@@ -98,7 +100,7 @@
             box-shadow: 0 15px 30px rgba(30, 96, 255, 0.2);
         }
 
-        /* Name Design */
+        /* Name Design with Gradient */
         .name-container h1 {
             font-size: 34px;
             font-weight: 800;
@@ -154,7 +156,6 @@
             border-radius: 20px;
             background: #ffffff;
             border: 1px solid #f1f5f9;
-            text-align: left;
         }
 
         .expertise-box i {
@@ -164,16 +165,28 @@
             display: block;
         }
 
+        /* --- Mobile Specific Styles (ෆෝන් එකට විතරයි) --- */
+        @media (max-width: 768px) {
+            .header-banner {
+                height: auto; /* උස auto කළා පින්තූරය අනුව හැඩගැහෙන්න */
+                aspect-ratio: 16 / 9; /* බැනර් එකේ හැඩය පවත්වා ගැනීමට */
+            }
+            .header-banner img {
+                object-fit: contain; /* ෆෝන් එකේදී පින්තූරය කැපෙන්නේ නැතුව සම්පූර්ණයෙන් පෙන්වයි */
+                background-color: #000;
+            }
+            .container {
+                margin-top: -30px; /* පින්තූරය contain නිසා margin එක චුට්ටක් අඩු කළා */
+            }
+            .name-container h1 { font-size: 32px; }
+        }
+
         /* Desktop Settings */
         @media (min-width: 850px) {
             .profile-section { flex-direction: row; text-align: left; align-items: flex-start; gap: 60px; }
             .expertise-grid { grid-template-columns: 1fr 1fr; }
             .container { padding: 60px; margin-top: -100px; }
             .name-container h1 { font-size: 48px; }
-            .header-banner { height: 380px; }
-            .photo-stack { width: 360px; }
-            .main-img { width: 200px; height: 200px; }
-            .sub-img { width: 190px; height: 190px; top: 70px; right: 10px; }
         }
 
         /* WhatsApp */
