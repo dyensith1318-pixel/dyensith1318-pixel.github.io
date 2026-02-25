@@ -1,227 +1,93 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dulin Yensith | Portfolio</title>
-    <link rel="icon" type="image/jpeg" href="My Photo.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; color: #1e293b; overflow-x: hidden; }
 
-        body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        /* Banner - Desktop */
-        .header-banner {
+        /* --- Hero Banner --- */
+        .hero-banner {
             width: 100%;
-            height: 380px;
-            background-color: #000;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 400px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
         }
 
-        .header-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* කොම්පියුටර් එකට ෆුල් පේන්න */
-            opacity: 0.9;
+        .hero-content {
+            width: 90%; max-width: 1100px;
+            display: flex; align-items: center; justify-content: space-between;
+            z-index: 10;
         }
 
-        /* Container */
+        .hero-text h1 { font-size: clamp(32px, 5vw, 55px); font-weight: 800; color: white; line-height: 1.1; letter-spacing: -2px; }
+        .hero-text span { color: #3b82f6; }
+        .hero-image-box { width: 300px; height: 300px; border-radius: 30px; overflow: hidden; border: 5px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .hero-image-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- Container --- */
         .container {
-            width: 92%;
-            max-width: 1100px;
+            width: 92%; max-width: 1100px;
             background: #ffffff;
-            margin: -80px auto 40px auto;
-            position: relative;
-            border-radius: 30px;
-            padding: 40px 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-            z-index: 10;
+            margin: -60px auto 40px auto;
+            position: relative; border-radius: 35px;
+            padding: 40px; box-shadow: 0 30px 70px rgba(0,0,0,0.1);
+            z-index: 20;
         }
 
-        /* Profile Layout */
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 20px;
-        }
-
-        /* Photo Stack */
-        .photo-stack {
-            position: relative;
-            width: 300px; 
-            height: 220px;
-        }
-
-        /* පිටුපස ඇති කොටු ෆොටෝ එක */
-        .sub-img {
-            position: absolute;
-            top: 50px; 
-            right: 0; 
-            width: 160px;
-            height: 160px;
-            border-radius: 25px;
-            border: 5px solid #ffffff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            z-index: 5;
-            object-fit: cover;
-        }
-
-        /* ඉදිරියෙන් ඇති රවුම් ෆොටෝ එක */
-        .main-img {
-            position: absolute;
-            top: 0;
-            left: 0; 
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            border: 6px solid #1e60ff;
-            padding: 4px;
-            background: white;
-            z-index: 10;
-            object-fit: cover;
-            box-shadow: 0 15px 30px rgba(30, 96, 255, 0.2);
-        }
-
-        /* Name Design with Gradient */
-        .name-container h1 {
-            font-size: 34px;
-            font-weight: 800;
-            margin: 15px 0 5px 0;
-            background: linear-gradient(90deg, #0f172a, #1e60ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-        }
-
-        .role {
-            font-size: 13px;
-            font-weight: 700;
-            color: #64748b;
-            letter-spacing: 2px;
+        .section-title {
+            font-size: 24px; font-weight: 800; margin: 50px 0 25px 0;
+            color: #0f172a; display: flex; align-items: center; gap: 12px;
             text-transform: uppercase;
         }
+        .section-title i { color: #3b82f6; }
 
-        /* About Section */
-        .about-card {
-            width: 100%;
-            background: #f8faff;
-            padding: 25px;
-            border-radius: 25px;
-            margin-top: 30px;
-            border: 1px solid #edf2f7;
-        }
+        .modern-card { background: white; padding: 25px; border-radius: 25px; border: 1px solid #f1f5f9; margin-bottom: 20px; }
 
-        .about-card h2 {
-            font-size: 24px;
-            color: #1e60ff;
-            margin: 0 0 15px 0;
-        }
+        /* Profile Layout */
+        .profile-section { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; margin-bottom: 30px; }
+        .photo-stack { position: relative; width: 280px; height: 220px; flex-shrink: 0; }
+        .main-img { position: absolute; top: 0; left: 0; width: 170px; height: 170px; border-radius: 50%; border: 6px solid #1e60ff; padding: 4px; background: white; z-index: 10; object-fit: cover; }
+        .sub-img { position: absolute; top: 50px; right: 0; width: 160px; height: 160px; border-radius: 25px; border: 5px solid #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 5; object-fit: cover; }
 
-        .about-card p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #475569;
-            text-align: justify;
-        }
+        /* ICC Buttons */
+        .ranking-container { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .rank-btn { flex: 1; min-width: 150px; padding: 15px 20px; border-radius: 15px; text-align: center; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; color: white; }
+        .btn-batting { background: #e11d48; }
+        .btn-bowling { background: #2563eb; }
+        .btn-fielding { background: #059669; }
+        .rank-btn:hover { transform: translateY(-3px); opacity: 0.9; }
 
-        /* Expertise Grid */
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 30px;
-            width: 100%;
-        }
-
-        .expertise-box {
-            padding: 25px;
-            border-radius: 20px;
-            background: #ffffff;
-            border: 1px solid #f1f5f9;
-        }
-
-        .expertise-box i {
-            font-size: 26px;
-            color: #1e60ff;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        /* --- Mobile Specific Styles (ෆෝන් එකට විතරයි) --- */
+        /* Responsive */
         @media (max-width: 768px) {
-            .header-banner {
-                height: auto; /* උස auto කළා පින්තූරය අනුව හැඩගැහෙන්න */
-                aspect-ratio: 16 / 9; /* බැනර් එකේ හැඩය පවත්වා ගැනීමට */
-            }
-            .header-banner img {
-                object-fit: contain; /* ෆෝන් එකේදී පින්තූරය කැපෙන්නේ නැතුව සම්පූර්ණයෙන් පෙන්වයි */
-                background-color: #000;
-            }
-            .container {
-                margin-top: -30px; /* පින්තූරය contain නිසා margin එක චුට්ටක් අඩු කළා */
-            }
-            .name-container h1 { font-size: 32px; }
+            .hero-content { flex-direction: column-reverse; text-align: center; }
+            .hero-image-box { width: 220px; height: 220px; }
+            .container { padding: 30px 20px; }
+            .profile-section { flex-direction: column; }
+            .ranking-container { flex-direction: column; }
         }
 
-        /* Desktop Settings */
-        @media (min-width: 850px) {
-            .profile-section { flex-direction: row; text-align: left; align-items: flex-start; gap: 60px; }
-            .expertise-grid { grid-template-columns: 1fr 1fr; }
-            .container { padding: 60px; margin-top: -100px; }
-            .name-container h1 { font-size: 48px; }
-        }
-
-        /* WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 32px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            z-index: 100;
-            text-decoration: none;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 40px 0;
-            font-size: 11px;
-            color: #94a3b8;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 32px; z-index: 100; text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <div class="header-banner">
-        <img src="Baner.jpeg" alt="Banner Image">
+    <div class="hero-banner">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>DULIN<br><span>YENSITH</span></h1>
+                <p style="color: #94a3b8; margin-top: 10px; letter-spacing: 2px;">ICT & CRICKET ENTHUSIAST</p>
+            </div>
+            <div class="hero-image-box">
+                <img src="My Photo2.jpeg" alt="Dulin Professional">
+            </div>
+        </div>
     </div>
 
     <a href="https://wa.me/94764438784" class="whatsapp-float" target="_blank">
@@ -231,53 +97,55 @@
     <div class="container">
         <div class="profile-section">
             <div class="photo-stack">
-                <img src="My Photo2.jpeg" class="sub-img" alt="Secondary Photo">
+                <img src="My Photo2.jpeg" class="sub-img" alt="Sub Photo">
                 <img src="My Photo.jpeg" class="main-img" alt="Main Photo">
             </div>
-            
-            <div class="name-container">
-                <h1>Dulin Yensith</h1>
-                <span class="role">ICT & Cricket Enthusiast</span>
+            <div class="modern-card" style="flex:1;">
+                <h2 style="color: #1e60ff; margin-bottom: 10px; font-weight: 800;">About Me</h2>
+                <p style="line-height: 1.8; color: #475569;">I am a highly motivated student with a deep passion for Information Technology and Cricket. I thrive on challenges and constantly seek to bridge the gap between sportsmanship and digital innovation.</p>
             </div>
         </div>
 
-        <div class="about-card">
-            <h2>About</h2>
-            <p>
-                I am Dulin Yensith, a highly dedicated student and a technology enthusiast. 
-                Cricket is more than just a sport to me; it's a lifestyle that has taught me 
-                discipline and teamwork. In the digital world, I am passionate about 
-                Information Technology and building innovative solutions.
-            </p>
+        <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+        <div class="modern-card">
+            <div style="border-left: 3px solid #3b82f6; padding-left: 20px; margin-bottom: 15px;">
+                <h4 style="color: #0f172a;">Advanced Level (ICT Stream)</h4>
+                <p style="font-size: 14px; color: #64748b;">Building a solid foundation for a future in Software Engineering.</p>
+            </div>
+            <div style="border-left: 3px solid #3b82f6; padding-left: 20px;">
+                <h4 style="color: #0f172a;">Secondary Education</h4>
+                <p style="font-size: 14px; color: #64748b;">Consistently maintaining high academic standards and sports excellence.</p>
+            </div>
         </div>
 
-        <h2 style="font-size: 20px; margin-top: 40px; color: #0f172a; font-weight: 800;">MY EXPERTISE</h2>
+        <h3 class="section-title"><i class="fas fa-bat"></i> My Favorite Sport</h3>
+        <div class="modern-card" style="background: #f8faff; border-left: 5px solid #1e60ff;">
+            <h4 style="color: #1e3a8a; margin-bottom: 10px;">CRICKET</h4>
+            <p style="color: #475569; line-height: 1.6;">Cricket is my absolute favorite sport. It is more than just a game to me; it is a lifestyle that has taught me the importance of discipline, leadership, and teamwork. Whether it is on the field or in life, the spirit of cricket guides my way.</p>
+        </div>
 
-        <div class="expertise-grid">
-            <div class="expertise-box">
-                <i class="fas fa-cricket-bat-ball"></i>
-                <h3>My Lifestyle</h3>
-                <p>Cricket has taught me the importance of focus and teamwork in life.</p>
+        <div class="modern-card">
+            <h4 style="margin-bottom: 15px; font-size: 16px; color: #0f172a;"><i class="fas fa-chart-line"></i> Check Official ICC Rankings</h4>
+            <div class="ranking-container">
+                <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/batting" target="_blank" class="rank-btn btn-batting">
+                    <i class="fas fa-fist-raised"></i> Batting Rankings
+                </a>
+                <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/bowling" target="_blank" class="rank-btn btn-bowling">
+                    <i class="fas fa-baseball-ball"></i> Bowling Rankings
+                </a>
+                <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/all-rounder" target="_blank" class="rank-btn btn-fielding">
+                    <i class="fas fa-running"></i> All-Rounder Rankings
+                </a>
             </div>
-            <div class="expertise-box">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Technology & ICT</h3>
-                <p>Highly skilled in Computing and IT. I love learning new tech daily.</p>
-            </div>
-            <div class="expertise-box">
-                <i class="fas fa-chart-line"></i>
-                <h3>Cricket Journey</h3>
-                <p>Every game is a lesson in strategy, resilience, and perseverance.</p>
-            </div>
-            <div class="expertise-box">
-                <i class="fas fa-rocket"></i>
-                <h3>Future Goals</h3>
-                <p>Creating innovative solutions for the future digital world.</p>
-            </div>
+        </div>
+
+        <h3 class="section-title"><i class="fas fa-lightbulb"></i> My Vision</h3>
+        <div class="modern-card" style="background: linear-gradient(to right, #ffffff, #f0f7ff);">
+            <p style="font-size: 16px; font-style: italic; color: #1e3a8a;">"To become a leading figure in the ICT industry, leveraging my background in sports to bring a unique, disciplined approach to technology."</p>
         </div>
     </div>
 
-    <div class="footer">
+    <div style="text-align: center; padding: 40px; color: #94a3b8; font-size: 11px; font-weight: 700; letter-spacing: 2px;">
         © DESIGNED BY DULIN YENSITH
     </div>
 
