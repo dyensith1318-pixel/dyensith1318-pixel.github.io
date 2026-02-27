@@ -30,6 +30,14 @@
             width: 90%; max-width: 400px; transition: transform 0.3s ease;
         }
 
+        #reg-check-card { display: block; }
+        #credentials-card { display: none; }
+
+        .choice-btn-group { display: flex; gap: 10px; margin-top: 20px; }
+        .choice-btn { flex: 1; padding: 12px; border-radius: 12px; border: none; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .btn-yes { background: #3b82f6; color: white; }
+        .btn-no { background: #64748b; color: white; }
+
         .login-card img { width: 80px; border-radius: 15px; margin-bottom: 15px; }
 
         .input-group { text-align: left; margin-bottom: 20px; }
@@ -45,20 +53,17 @@
         .login-btn {
             width: 100%; padding: 15px; background: #3b82f6; color: white;
             border: none; border-radius: 12px; font-weight: 800;
-            cursor: pointer; font-size: 16px; transition: 0.3s;
-        }
+            cursor: pointer; font-size: 16px; transition: 0.3s; }
         .login-btn:hover { background: #2563eb; transform: translateY(-2px); }
 
         .error-txt { color: #e11d48; font-size: 13px; margin-top: 15px; display: none; font-weight: 600; }
 
-        /* --- Main Content (Hidden Initially) --- */
         #main-site-content { display: none; padding-top: 70px; }
 
-        /* --- Original Portfolio Styles --- */
         .navbar { position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px); height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .nav-links { display: flex; gap: 25px; list-style: none; }
-        .nav-links a { text-decoration: none; color: #f8fafc; font-weight: 600; font-size: 14px; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-links a:hover { color: #3b82f6; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #f8fafc; font-weight: 600; font-size: 13px; transition: 0.3s; text-transform: uppercase; }
+        
         .hero-banner { width: 100%; height: 400px; background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
         .banner-logo { position: absolute; top: 15px; left: 15px; width: 40px; height: auto; border-radius: 8px; opacity: 0.9; z-index: 15; }
         .hero-content { width: 90%; max-width: 1100px; display: flex; align-items: center; justify-content: space-between; z-index: 10; }
@@ -66,14 +71,17 @@
         .hero-text span { color: #3b82f6; }
         .hero-image-box { width: 300px; height: 300px; border-radius: 30px; overflow: hidden; border: 5px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
         .hero-image-box img { width: 100%; height: 100%; object-fit: cover; }
+        
         .container { width: 92%; max-width: 1100px; background: #ffffff; margin: -60px auto 40px auto; position: relative; border-radius: 35px; padding: 40px; box-shadow: 0 30px 70px rgba(0,0,0,0.1); z-index: 20; }
         .section-title { font-size: 24px; font-weight: 800; margin: 50px 0 25px 0; color: #0f172a; display: flex; align-items: center; gap: 12px; text-transform: uppercase; }
         .section-title i { color: #3b82f6; }
         .modern-card { background: white; padding: 25px; border-radius: 25px; border: 1px solid #f1f5f9; margin-bottom: 20px; }
+        
         .profile-section { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; margin-bottom: 30px; }
         .photo-stack { position: relative; width: 280px; height: 220px; flex-shrink: 0; }
         .main-img { position: absolute; top: 0; left: 0; width: 170px; height: 170px; border-radius: 50%; border: 6px solid #1e60ff; padding: 4px; background: white; z-index: 10; object-fit: cover; }
         .sub-img { position: absolute; top: 50px; right: 0; width: 160px; height: 160px; border-radius: 25px; border: 5px solid #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 5; object-fit: cover; }
+        
         .ranking-container { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
         .rank-btn { flex: 1; min-width: 150px; padding: 15px 20px; border-radius: 15px; text-align: center; text-decoration: none; font-weight: 700; font-size: 14px; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; color: white; }
         .btn-batting { background: #e11d48; }
@@ -82,51 +90,53 @@
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 32px; z-index: 100; text-decoration: none; }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .navbar { padding: 0 2%; height: 60px; }
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 11px; }
             .hero-content { flex-direction: column-reverse; text-align: center; }
-            .hero-image-box { width: 220px; height: 220px; }
-            .container { padding: 30px 20px; }
+            .hero-image-box { width: 220px; height: 220px; margin-bottom: 20px; }
+            .container { padding: 30px 15px; }
             .profile-section { flex-direction: column; }
+            .photo-stack { margin: 0 auto 30px auto; width: 280px; }
+            .sub-img { display: block !important; } /* පින්තූර දෙකම පෙන්වීමට */
         }
     </style>
 </head>
 <body>
 
     <div id="login-overlay">
-        <div class="login-card">
+        <div class="login-card" id="reg-check-card">
+            <img src="Logo.jpeg" alt="Logo">
+            <h2 style="margin-bottom: 10px; color: #0f172a; font-weight: 800;">WELCOME</h2>
+            <p style="color: #64748b; font-size: 15px; margin-bottom: 25px;">Have you already registered with a phone number?</p>
+            <div class="choice-btn-group">
+                <button class="choice-btn btn-yes" onclick="showLogin()">YES</button>
+                <button class="choice-btn btn-no" onclick="unlockSite()">NO</button>
+            </div>
+        </div>
+
+        <div class="login-card" id="credentials-card">
             <img src="Logo.jpeg" alt="Logo">
             <h2 style="margin-bottom: 5px; color: #0f172a; font-weight: 800;">DULIN PORTFOLIO</h2>
             <p style="color: #64748b; font-size: 13px; margin-bottom: 25px;">Please enter your authorized details to enter.</p>
-            
-            <div class="input-group">
-                <label>Enter Phone Number</label>
-                <input type="password" id="phone-input" class="login-input" placeholder="••••••••••">
-            </div>
-
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" id="user-input" class="login-input" placeholder="Enter Username">
-            </div>
-
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="pass-input" class="login-input" placeholder="••••">
-            </div>
-
-            <button class="login-btn" onclick="validateAccess()">UNLOACK SITE</button>
+            <div class="input-group"><label>Enter Phone Number</label><input type="password" id="phone-input" class="login-input" placeholder="••••••••••"></div>
+            <div class="input-group"><label>Username</label><input type="text" id="user-input" class="login-input" placeholder="Enter Username"></div>
+            <div class="input-group"><label>Password</label><input type="password" id="pass-input" class="login-input" placeholder="••••"></div>
+            <button class="login-btn" onclick="validateAccess()">Continue</button>
             <p id="error-msg" class="error-txt">Access Denied! Invalid credentials.</p>
+            <p onclick="backToQuestion()" style="margin-top:15px; font-size:12px; color:#3b82f6; cursor:pointer; font-weight:700;">Go Back</p>
         </div>
     </div>
 
     <div id="main-site-content">
         <nav class="navbar">
-            <div style="color: white; font-weight: 800; font-size: 20px;">DULIN<span style="color: #3b82f6;">.</span></div>
+            <div style="color: white; font-weight: 800; font-size: 18px;">YENSITH<span style="color: #3b82f6;">.</span></div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#education">Edu</a></li>
                 <li><a href="#cricket">Cricket</a></li>
-                <li><a href="#vision">Vision</a></li>
+                
             </ul>
         </nav>
 
@@ -143,9 +153,7 @@
             </div>
         </div>
 
-        <a href="https://wa.me/94764438784" class="whatsapp-float" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://wa.me/94764438784" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
         <div class="container">
             <div class="profile-section" id="about">
@@ -174,27 +182,16 @@
             <h3 class="section-title" id="cricket"><i class="fas fa-bat"></i> My Favorite Sport</h3>
             <div class="modern-card" style="background: #f8faff; border-left: 5px solid #1e60ff;">
                 <h4 style="color: #1e3a8a; margin-bottom: 10px;">CRICKET</h4>
-                <p style="color: #475569; line-height: 1.6;">Cricket is my absolute favorite sport. It is more than just a game to me; it is a lifestyle that has taught me the importance of discipline, leadership, and teamwork. Whether it is on the field or in life, the spirit of cricket guides my way.</p>
+                <p style="color: #475569; line-height: 1.6;">Cricket is my absolute favorite sport. It is more than just a game to me; it is a lifestyle that has taught me the importance of discipline, leadership, and teamwork.</p>
             </div>
 
             <div class="modern-card">
                 <h4 style="margin-bottom: 15px; font-size: 16px; color: #0f172a;"><i class="fas fa-chart-line"></i> Check Official ICC Rankings</h4>
                 <div class="ranking-container">
-                    <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/batting" target="_blank" class="rank-btn btn-batting">
-                        <i class="fas fa-fist-raised"></i> Batting Rankings
-                    </a>
-                    <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/bowling" target="_blank" class="rank-btn btn-bowling">
-                        <i class="fas fa-baseball-ball"></i> Bowling Rankings
-                    </a>
-                    <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/all-rounder" target="_blank" class="rank-btn btn-fielding">
-                        <i class="fas fa-running"></i> All-Rounder Rankings
-                    </a>
+                    <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/batting" target="_blank" class="rank-btn btn-batting">Batting</a>
+                    <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/bowling" target="_blank" class="rank-btn btn-bowling">Bowling</a>
+                    <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/all-rounder" target="_blank" class="rank-btn btn-fielding">All-Rounder</a>
                 </div>
-            </div>
-
-            <h3 class="section-title" id="vision"><i class="fas fa-lightbulb"></i> My Vision</h3>
-            <div class="modern-card" style="background: linear-gradient(to right, #ffffff, #f0f7ff);">
-                <p style="font-size: 16px; font-style: italic; color: #1e3a8a;">"To become a leading figure in the ICT industry, leveraging my background in sports to bring a unique, disciplined approach to technology."</p>
             </div>
         </div>
 
@@ -204,41 +201,34 @@
     </div>
 
     <script>
+        function showLogin() {
+            document.getElementById('reg-check-card').style.display = "none";
+            document.getElementById('credentials-card').style.display = "block";
+        }
+        function backToQuestion() {
+            document.getElementById('reg-check-card').style.display = "block";
+            document.getElementById('credentials-card').style.display = "none";
+        }
+        function unlockSite() {
+            document.getElementById('login-overlay').style.transition = "0.6s ease";
+            document.getElementById('login-overlay').style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById('login-overlay').style.display = "none";
+                document.getElementById('main-site-content').style.display = "block";
+                document.body.style.overflow = "auto";
+            }, 600);
+        }
         function validateAccess() {
             const phone = document.getElementById('phone-input').value;
             const user = document.getElementById('user-input').value;
             const pass = document.getElementById('pass-input').value;
-            const errorTxt = document.getElementById('error-msg');
-
-            // --- Authorized User Data ---
             const validUsers = [
                 { phone: "0763125657", user: "user1", pass: "1234" },
                 { phone: "0764438784", user: "user2", pass: "5678" }
             ];
-
-            // Check if credentials match any user in the list
             const match = validUsers.find(u => u.phone === phone && u.user === user && u.pass === pass);
-
-            if (match) {
-                // Success - Unlock the site
-                document.getElementById('login-overlay').style.transition = "0.6s ease";
-                document.getElementById('login-overlay').style.opacity = "0";
-                setTimeout(() => {
-                    document.getElementById('login-overlay').style.display = "none";
-                    document.getElementById('main-site-content').style.display = "block";
-                    document.body.style.overflow = "auto";
-                }, 600);
-            } else {
-                // Fail - Show error
-                errorTxt.style.display = "block";
-                // Simple shake animation on error
-                const card = document.querySelector('.login-card');
-                card.style.transform = "translateX(10px)";
-                setTimeout(() => card.style.transform = "translateX(-10px)", 100);
-                setTimeout(() => card.style.transform = "translateX(0)", 200);
-            }
+            if (match) { unlockSite(); } else { document.getElementById('error-msg').style.display = "block"; }
         }
     </script>
-
 </body>
 </html>
