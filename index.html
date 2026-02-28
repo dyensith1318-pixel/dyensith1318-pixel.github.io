@@ -15,7 +15,17 @@
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { background-color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; color: #1e293b; overflow-x: hidden; }
+        
+        /* --- Security: Prevent Text/Image Selection --- */
+        body { 
+            background-color: #f8fafc; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            color: #1e293b; 
+            overflow-x: hidden; 
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
 
         /* --- Security Overlay Styles --- */
         #login-overlay {
@@ -98,7 +108,7 @@
             .container { padding: 30px 15px; }
             .profile-section { flex-direction: column; }
             .photo-stack { margin: 0 auto 30px auto; width: 280px; }
-            .sub-img { display: block !important; } /* පින්තූර දෙකම පෙන්වීමට */
+            .sub-img { display: block !important; }
         }
     </style>
 </head>
@@ -136,7 +146,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Edu</a></li>
                 <li><a href="#cricket">Cricket</a></li>
-                
             </ul>
         </nav>
 
@@ -163,73 +172,4 @@
                 </div>
                 <div class="modern-card" style="flex:1;">
                     <h2 style="color: #1e60ff; margin-bottom: 10px; font-weight: 800;">About Me</h2>
-                    <p style="line-height: 1.8; color: #475569;">I am a highly motivated student with a deep passion for Information Technology and Cricket. I thrive on challenges and constantly seek to bridge the gap between sportsmanship and digital innovation.</p>
-                </div>
-            </div>
-
-            <h3 class="section-title" id="education"><i class="fas fa-graduation-cap"></i> Education</h3>
-            <div class="modern-card">
-                <div style="border-left: 3px solid #3b82f6; padding-left: 20px; margin-bottom: 15px;">
-                    <h4 style="color: #0f172a;">Advanced Level (ICT Stream)</h4>
-                    <p style="font-size: 14px; color: #64748b;">Building a solid foundation for a future in Software Engineering.</p>
-                </div>
-                <div style="border-left: 3px solid #3b82f6; padding-left: 20px;">
-                    <h4 style="color: #0f172a;">Secondary Education</h4>
-                    <p style="font-size: 14px; color: #64748b;">Consistently maintaining high academic standards and sports excellence.</p>
-                </div>
-            </div>
-
-            <h3 class="section-title" id="cricket"><i class="fas fa-bat"></i> My Favorite Sport</h3>
-            <div class="modern-card" style="background: #f8faff; border-left: 5px solid #1e60ff;">
-                <h4 style="color: #1e3a8a; margin-bottom: 10px;">CRICKET</h4>
-                <p style="color: #475569; line-height: 1.6;">Cricket is my absolute favorite sport. It is more than just a game to me; it is a lifestyle that has taught me the importance of discipline, leadership, and teamwork.</p>
-            </div>
-
-            <div class="modern-card">
-                <h4 style="margin-bottom: 15px; font-size: 16px; color: #0f172a;"><i class="fas fa-chart-line"></i> Check Official ICC Rankings</h4>
-                <div class="ranking-container">
-                    <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/batting" target="_blank" class="rank-btn btn-batting">Batting</a>
-                    <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/bowling" target="_blank" class="rank-btn btn-bowling">Bowling</a>
-                    <a href="https://www.icc-cricket.com/rankings/mens/player-rankings/all-rounder" target="_blank" class="rank-btn btn-fielding">All-Rounder</a>
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; padding: 40px; color: #94a3b8; font-size: 11px; font-weight: 700; letter-spacing: 2px;">
-            © DESIGNED BY DULIN YENSITH
-        </div>
-    </div>
-
-    <script>
-        function showLogin() {
-            document.getElementById('reg-check-card').style.display = "none";
-            document.getElementById('credentials-card').style.display = "block";
-        }
-        function backToQuestion() {
-            document.getElementById('reg-check-card').style.display = "block";
-            document.getElementById('credentials-card').style.display = "none";
-        }
-        function unlockSite() {
-            document.getElementById('login-overlay').style.transition = "0.6s ease";
-            document.getElementById('login-overlay').style.opacity = "0";
-            setTimeout(() => {
-                document.getElementById('login-overlay').style.display = "none";
-                document.getElementById('main-site-content').style.display = "block";
-                document.body.style.overflow = "auto";
-            }, 600);
-        }
-        function validateAccess() {
-            const phone = document.getElementById('phone-input').value;
-            const user = document.getElementById('user-input').value;
-            const pass = document.getElementById('pass-input').value;
-            const validUsers = [
-                { phone: "0763125657", user: "user1", pass: "1234" },
-                { phone: "0764438784", user: "user2", pass: "5678" }
-            ];
-            const match = validUsers.find(u => u.phone === phone && u.user === user && u.pass === pass);
-            if (match) { unlockSite(); } else { document.getElementById('error-msg').style.display = "block"; }
-        }
-    </script>
-</body>
-</html>
-
+                    <p style="line-height: 1.8; color: #475569;">I am a highly motivated student with a deep passion for Information Technology and Cricket. I thrive on challenges and constantly seek to bridge the gap between sports
